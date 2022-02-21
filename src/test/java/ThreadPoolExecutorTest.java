@@ -21,7 +21,7 @@ public class ThreadPoolExecutorTest {
             maximumPoolSize,
             10L,
             TimeUnit.SECONDS,
-            new LinkedBlockingQueue<>(880),
+            new LinkedBlockingQueue<>(1000),
             Executors.defaultThreadFactory());
 
 
@@ -40,7 +40,7 @@ public class ThreadPoolExecutorTest {
             }
         }).start();
 
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < 1119; i++) {
             threadPoolExecutor.execute(() -> {
                 try {
                     Thread.sleep(5000);
